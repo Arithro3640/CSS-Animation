@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated-Text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .div1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vmax;
+            background-color: black;
+            height: 100vmin;
+        }
+        .loader::after{
+            content: "";
+            font-weight: 500px;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+            animation: animatingtext 1300ms infinite;
+        }
+        @keyframes animatingtext{
+            0%{ content:"L"; }
+            10%{ content:"Lo"; }
+            20%{ content:"Loa"; }
+            30%{ content:"Load"; }
+            40%{ content:"Loadi"; }
+            50%{ content:"Loadin"; }
+            60%{ content:"Loading"; }
+            70%{ content:"Loading ."; }
+            80%{ content:"Loading .."; }
+            90%{ content:"Loading ..."; }
+            100%{ content:"Loading ...."; }
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="loader"></div>
+    </div>
+    <div class="div2">
+
+    </div>
+</body>
+</html>
