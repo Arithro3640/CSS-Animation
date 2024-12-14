@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated-Borders</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-color: #2f3640;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div1{
+            position: relative;
+            width:300px ;
+            margin: 10px;
+            padding: 2em;
+            text-align: center;
+            background-color: black;
+            border-radius: 10px;
+
+        }
+        .div1 h1{
+            color: white;
+            font-size: 30px;
+        }
+        .div1 p{
+            color: white;
+            margin: 10px 0px 0px 0px;
+            font-size: 14px;
+        }
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .div1::after,.div1::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), transparent 70%, #55efc4, blue,rgb(1, 162, 255),lightblue,seagreen );
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            padding: 1px;
+            border-radius:10px;
+            animation: 3.5s spin linear infinite;
+        }
+       .div1::before{
+        filter: blur(1.5em);
+        opacity: 0.5;
+       }
+       @keyframes spin{
+
+        from{
+            --angle:0deg;
+        }
+        to{
+            --angle:360deg;
+        }
+       }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>Border Animation</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor sunt repudiandae, atque quae voluptatibus inventore earum sint amet illum beatae, natus fugit explicabo ut facere nisi culpa incidunt! Libero veniam enim dolores? Est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatum, quidem nihil sequi exercitationem provident.</p>
+    </div>
+    <div class="div1">
+        <h1>Border Animation</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor sunt repudiandae, atque quae voluptatibus inventore earum sint amet illum beatae, natus fugit explicabo ut facere nisi culpa incidunt! Libero veniam enim dolores? Est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatum, quidem nihil sequi exercitationem provident.</p>
+    </div>
+</body>
+</html>
